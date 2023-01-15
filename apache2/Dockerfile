@@ -17,7 +17,7 @@ ENV LOG_STDOUT=/var/log/apache2/access.log
 
 ENV LOG_STDERR=/var/log/apache2/error.log
 
-EXPOSE 80 443
+EXPOSE 80 443 8000
 
 WORKDIR /var/www/
 
@@ -29,7 +29,7 @@ ENTRYPOINT ["/opt/docker/bin/entrypoint.sh"]
 
 CMD ["/bin/bash", "/opt/startup.sh"]
 
-EXPOSE 80 443
+EXPOSE 80 443 8000
 
 ARG APACHE_FOR_MAC_M1=false
 
