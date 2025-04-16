@@ -143,6 +143,8 @@ services:
         - ./php-worker/supervisord.d:/etc/supervisord.d
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "direct.saikaiscans.net:10.108.0.5"
+        - "api.saikaiscans.net:apache2"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
         - "${WORKSPACE_BROWSERSYNC_HOST_PORT}:3002" #changed
@@ -333,6 +335,10 @@ services:
         - "3000"
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+        - "direct.saikaiscans.net:10.108.0.5"
+        - "api.saikaiscans.net:apache2"
       networks:
           - frontend
           - backend
