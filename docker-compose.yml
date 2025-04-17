@@ -537,9 +537,9 @@ services:
         - ${APACHE_HOST_LOG_PATH}:/var/log/apache2
         - ${APACHE_SITES_PATH}:/etc/apache2/sites-available
         - ${APACHE_SSL_PATH}:/etc/apache2/ssl
-      ports:
-        - "${APACHE_HOST_HTTP_PORT}:8000"
-        - "${APACHE_HOST_HTTPS_PORT}:444"
+      # ports:
+      #   - "${APACHE_HOST_HTTP_PORT}:8000"
+      #   - "${APACHE_HOST_HTTPS_PORT}:444"
       depends_on:
         - php-fpm
       networks:
